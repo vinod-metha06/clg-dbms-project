@@ -1,6 +1,7 @@
 <?php
 
 include("includes/db.php");
+include("functions/functions.php");
 
 
 ?>
@@ -9,14 +10,8 @@ include("includes/db.php");
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8">
+
 <title>my shop</title>
-<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <link rel="stylesheet" href="styles/style.css" media="all" />
 </head>
@@ -71,7 +66,7 @@ include("includes/db.php");
         <div id="sidebar_title">categories</div>
         <ul id="cats">
 
-          <?php
+          <!-- <?php
 
           $get_cats="select * from categories";
           $run_cats= mysqli_query($con, $get_cats);
@@ -84,14 +79,17 @@ include("includes/db.php");
           echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
           
           }
-         ?>
+         ?> -->
+
+         <?php getCats(); ?>
 
         </ul>
          
         <div id="sidebar_title">brands</div> 
 
         <ul id="cats">
-        <?php
+          <?php getBrands();?>
+        <!-- <?php
 
          $get_brands="select * from brands";
          $run_brands= mysqli_query($con, $get_brands);
@@ -104,7 +102,7 @@ include("includes/db.php");
           echo "<li><a href='index.php?brand=$brand_id'>$brand_title</a></li>";
 
              }
-           ?>
+           ?> -->
 
         </ul>
 
@@ -131,7 +129,7 @@ include("includes/db.php");
     </div>
     <div class="footer">
 
-    <h1 style="color:black; padding-top:30px; text-align:center;">&copy; 2020 - by www.onlineustate.com</h1>
+    <h1 style="color:black; padding-top:30px; text-align:center;">&copy; 2020 - by dev </h1>
     </div>
 
 

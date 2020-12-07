@@ -27,7 +27,7 @@ include("includes/db.php");
   <h2>Toggleable Pills</h2>
   <br>
   <!-- Nav pills -->
-  <div id="navbar">
+  <div >
   <ul class="nav nav-pills" role="tablist"  id="menu">
     <li class="nav-item">
       <a class="nav-link active" data-toggle="pill" href="#home">Home</a>
@@ -60,6 +60,64 @@ include("includes/db.php");
 
       </div>
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <?php
+
+$get_cats="select * from categories";
+$run_cats= mysqli_query($con, $get_cats);
+
+while($row_cats=mysqli_fetch_array($run_cats)) {
+
+  $cat_id=$row_cats['cat_id'];
+  $cat_title=$row_cats['cat_title'];
+
+echo "<li><a href='index.php?cat=$cat_id'>$cat_title</a></li>";
+
+}
+?> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Tab panes -->
   <div class="tab-content" >
