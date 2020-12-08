@@ -8,7 +8,7 @@ if(mysqli_connect_errno())
 
 //getting IP address
 function getIp(){
-    $ip =$_SERVER['REMOTE_ADDR'];
+    $ip = $_SERVER['REMOTE_ADDR'];
 
     if(!empty($_SERVER['HTTP_CLIENT_IP']))
     {
@@ -21,23 +21,30 @@ function getIp(){
 
     return $ip;
 }
+$ip = getIp();  
+echo 'User Real IP Address - '.$ip;  
 
+
+
+//getting add to cart
 
 function cart(){
 
     if(isset($_GET['add_cart']))
     {   
         global $con;
-        $ip=getIP();
+        $ip=getIp();
         $pro_id=$_GET['add_cart'];
         $check_pro="select * from cart where ip_add='$ip' AND p_id='$pro_id'";
-        $run_check=mysqli_query($con,$check_pro);
+        $run_check=mysqli_query($con, $check_pro);
 
         if(mysqli_num_rows($run_check)>0)
         {
             echo"error";
         }
         else{
+
+            // just remove qty from cart table from your database ****IMP***
             $insert_pro="insert into cart(p_id,ip_add) values ('$pro_id','$ip')";
 
             $run_pro = mysqli_query($con,$insert_pro);
@@ -45,25 +52,48 @@ function cart(){
             if($run_pro){
 
 
-                echo "<script>alert('product inserted successfully')</script>";
+                echo"<script>window.open('index.php','_self')</script>";
         
         
         
                }
-            // echo"<script>window.open('index.php','_self')</script>";
+            
         }
     }
 }
 
 
 
+//getting total items in cart
 
 
+function total_itmes(){
+    if(isset($_GET['add_cart']))
+    {   
+        global $con;
 
+        $ip=getIp();
 
+        $get_items= "select *from cart where ip_add='$ip'";
 
+        $run_items= mysqli_query($con,$get_items);
 
+        $count_items= mysqli_num_rows($run_items);
 
+    }else{
+        global $con;
+
+        $ip=getIp();
+
+        $get_items= "select *from cart where ip_add='$ip'";
+
+        $run_items= mysqli_query($con,$get_items);
+
+        $count_items= mysqli_num_rows($run_items);
+    }
+
+    echo $count_items;
+}
 
 //getting categories
 

@@ -35,8 +35,8 @@ include("functions/functions.php");
     <!--navagation bar starts-->
     <div id="navbar">
       <ul id="menu">
-        <li><a href="#">home</a></li>
-        <li><a href="#">all products</a></li>
+        <li><a href="index.php">home</a></li>
+        <li><a href="all_products.php">all products</a></li>
         <li><a href="#">my account</a></li>
         <li><a href="#">sign up</a></li>
         <li><a href="#">shopping cart</a></li>
@@ -62,12 +62,11 @@ include("functions/functions.php");
     <!--navagation bar ends-->
 
     <div class="content_wrapper">
-    <?php cart();?>
+    
       <div id="left_sidebar">
         <div id="sidebar_title">categories</div>
         <ul id="cats">
 
-      
          <?php getCats(); ?>
 
         </ul>
@@ -75,9 +74,14 @@ include("functions/functions.php");
         <div id="sidebar_title">brands</div> 
 
         <ul id="cats">
-          <?php getBrands();?>
-        
+          <?php echo $ip=getBrands();?>
+         
+
+                     
+
         </ul>
+
+       <?php getIp();?>
 
 
       </div>
@@ -86,32 +90,41 @@ include("functions/functions.php");
       <div>
           <div>
           <?php getPro();?>
+          
           </div>
 
       </div>
       <div>
           <div>
           <?php getCatPro();?>
-          </div>
+         
 
       </div>
 
       <div>
           <div>
           <?php getBrandPro();?>
+          
           </div>
 
       </div>
 
-      
+    
       
       <!-- <div id="right_content">
 
+      
+
 
       <div id="headline"> -->
+
+      <div>
+      <?php cart(); ?>
+      
+      </div>
       <div id="headline_content"></div>
-      <b>welcome guest!</b>
-      <b style="color:yellow;">shopping cart:</b>
+      <b>welcome guest!</b> 
+      <b style="color:yellow;">shopping cart:<?php total_itmes(); ?></b>
       
       
       </div>
@@ -122,7 +135,7 @@ include("functions/functions.php");
 
     </div>
     <div class="footer">
-
+    <?php echo cart(); ?>
     <h1 style="color:black; padding-top:30px; text-align:center;">&copy; 2020 - by dev </h1>
     </div>
 
