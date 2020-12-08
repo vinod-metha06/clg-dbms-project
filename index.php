@@ -47,9 +47,9 @@ include("functions/functions.php");
 
       </ul>
       <div id="form">
-        <form method="get" action="result.php" enctype="multipart/form-data">
+        <form method="get" action="results.php" enctype="multipart/form-data">
         <input type="text" name="user_query" placeholder="search a product"/>
-        <input type="submit" name="search" value="search" />
+        <input type="submit" name="search" value="Search" />
         </form>
 
       </div>
@@ -62,6 +62,7 @@ include("functions/functions.php");
     <!--navagation bar ends-->
 
     <div class="content_wrapper">
+    <?php cart();?>
       <div id="left_sidebar">
         <div id="sidebar_title">categories</div>
         <ul id="cats">
@@ -112,9 +113,32 @@ include("functions/functions.php");
       </div>
 
 
+      <div>
+          <div>
+          <?php getPro();?>
+          </div>
+
+      </div>
+      <div>
+          <div>
+          <?php getCatPro();?>
+          </div>
+
+      </div>
+
+      <div>
+          <div>
+          <?php getBrandPro();?>
+          </div>
+
+      </div>
+
       
-      <div id="right_content">
-      <div id="headline">
+      
+      <!-- <div id="right_content">
+
+
+      <div id="headline"> -->
       <div id="headline_content"></div>
       <b>welcome guest!</b>
       <b style="colour:yello;">shopping cart:</b>
