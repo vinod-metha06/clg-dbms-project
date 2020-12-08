@@ -66,7 +66,6 @@ function cart(){
 
 //getting total items in cart
 
-
 function total_itmes(){
     if(isset($_GET['add_cart']))
     {   
@@ -94,6 +93,9 @@ function total_itmes(){
 
     echo $count_items;
 }
+
+
+
 
 //getting categories
 
@@ -174,6 +176,8 @@ function getPro(){
    }
    
    
+
+   /// getting Products based on category
    function getCatPro(){
    
        if(isset($_GET['cat'])){
@@ -222,7 +226,7 @@ function getPro(){
       }
 
 
-
+ /// getting Products based on brands
 
       function getBrandPro(){
    

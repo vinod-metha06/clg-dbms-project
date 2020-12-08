@@ -28,7 +28,6 @@ include("functions/functions.php");
         
 
 
-
     </div>
     <!--header ends-->
     
@@ -55,8 +54,6 @@ include("functions/functions.php");
       </div>
 
 
-
-
     </div>
 
     <!--navagation bar ends-->
@@ -75,9 +72,7 @@ include("functions/functions.php");
 
         <ul id="cats">
           <?php echo $ip=getBrands();?>
-         
-
-                     
+               
 
         </ul>
 
@@ -109,12 +104,8 @@ include("functions/functions.php");
 
       </div>
 
-    
       
       <!-- <div id="right_content">
-
-      
-
 
       <div id="headline"> -->
 
@@ -124,21 +115,21 @@ include("functions/functions.php");
       </div>
       <div id="headline_content"></div>
       <b>welcome guest!</b> 
-      <b style="color:yellow;">shopping cart:<?php total_itmes(); ?></b>
+
+      <b style="color:yellow;">shopping cart: <?php total_itmes(); ?> </b>
       
       
       </div>
-
-
 
         </div>
 
     </div>
     <div class="footer">
+
     <?php echo cart(); ?>
+
     <h1 style="color:black; padding-top:30px; text-align:center;">&copy; 2020 - by dev </h1>
     </div>
-
 
 </div>
 <!--main container end-->
