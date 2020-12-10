@@ -147,23 +147,23 @@ include("functions/functions.php");
 
                    
              <tr align="center">
-                 <td><input type="submit" name="remove" value="<?php echo $pro_id;?>"/></td>
+                 <td><input type="submit" name="remove"  value="remove <?php echo $pro_id;?>"/></td>
                  
-      
-
-
-                 <td><?php echo $product_title;?><br>
+                <td><?php echo $product_title;?><br>
+                  
                 <img src="admin_area/product_images/<?php echo $product_image;?>"
-                width="60" height="60"/>
-
+                width="60" height="60"/><br>
+                <?php echo" ₹ $single_price";?>
                 </td>
                 <td><input type="text" size="2" name='qty[]' value="<?php echo $qty;?>"/></td>
+                <td><?php echo" ₹ $values";?></td>
                 <td><input type="hidden" size="3" name='cart_idee[]' value="<?php echo $pro_id;?>"/></td>
               
-               <td colspan="2"><input type="submit" name="update_cart" value="Update Cart"/></td>
+               <td colspan="2"><input type="submit" name="update_cart" value="Update Cart"/></td><br>
              
                
              </tr>
+
 
 
         ///// For updating qunatity     
@@ -195,7 +195,7 @@ include("functions/functions.php");
 
             
              }
-    }
+       }
   }
    
  ?>
@@ -203,7 +203,7 @@ include("functions/functions.php");
     <?php }}
     
     
-    ?>
+        ?>
 
 
     ////// for deleting product from cart page
@@ -226,8 +226,8 @@ include("functions/functions.php");
 
          ?>
 
-           <td><?php echo" ₹ $single_price";?></td>
-           <td><?php echo" ₹ $values";?></td>
+          
+         
 
     <tr align="right"> 
                 <td colspan="4"><b>Sub Total:</b></td>
