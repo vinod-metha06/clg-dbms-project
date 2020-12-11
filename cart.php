@@ -83,7 +83,32 @@ include("functions/functions.php");
                     <div id="shopping_cart">
 					
                         <span style="float:right; font-size:18px; padding:5px; line-height:40px;"> 
-                        welcome guest! <b style="color:yellow">shopping cart-</b> total items: <?php total_itmes();?> total price:<?php total_price(); ?> <a href="cart.php" style="color:yellow">go to cart</a>
+                       
+
+                        <?php
+                          if(isset($_SESSION['customer_email'])){
+                              echo "<b>Welcome:</b>". $_SESSION['customer_email']."<b>Your</b>";
+                          }
+                          else{
+                              echo "<b>Welcome Guest:</b>";
+                          }
+                        ?>
+                        
+                        
+                        
+                        <b style="color:yellow">shopping cart-</b> total items: <?php total_itmes();?> total price:<?php total_price(); ?> <a href="index.php" style="color:yellow">Back to Shop</a>
+
+
+                        <?php
+                          if(!isset($_SESSION['customer_email'])){
+
+                              echo"<a href='checkout.php'>Login</a>";
+                          }
+                          else{
+                               echo"<a href='logout.php'>Logout</a>";
+                              }
+                        
+                         ?>
 						
                         </span>                      
                       
@@ -263,7 +288,7 @@ include("functions/functions.php");
 
                   <div id="footer">
                   
-                  <h2 style="text-align:center; padding-top:30px;">&copy; 2014 by www.shopp.my.com</h2>
+                  <h2 style="text-align:center; padding-top:30px;">&copy; 2021 by www.shopp.my.com</h2>
                   
                   
                   </div>
